@@ -1,20 +1,20 @@
-import React from 'react'
-import RelativeComponent from './relativeComponent'
+import React from 'react';
 
 const App = () => {
-  const relative = ["Ram" , "Shyam" , "Sita" , "Geeta"];
+  const relatives = ["relative1", "relative2", "relative3", "relative4"];
 
-  const rc = relative.map((name , index)=>{
-    return <RelativeComponent key={"relativeListItem"+ index} name={name}/>
-  })
   return (
     <div id="main">
-      <h1>Relative List</h1>
-        <ol>
-          {rc}
-        </ol>
+      <ol id="relativeList" key={"relativeList"}>
+        {relatives.map((relative, i) => (
+          <li id={`relativeListItem${i + 1}`} key={`relativeListItem${i + 1}`}>
+            {relative}
+          </li>
+        ))}
+      </ol>
+
     </div>
   )
 }
 
-export default App
+export default App;
